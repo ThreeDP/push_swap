@@ -1,0 +1,12 @@
+name: Actions Test
+on: [push]
+jobs:
+  actions-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: minunit-42
+    steps:
+    - uses: actions/checkout@v2
+    - name: run test
+      run: make
