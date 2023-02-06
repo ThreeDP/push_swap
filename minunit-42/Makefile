@@ -11,8 +11,8 @@ L_GREENB		=			\033[1;32m
 DIR				=			../srcs/
 DIR_OUTS		=			./outs/
 EXEC_OUTS		=			$(wildcard $(DIR_OUTS)*)
-YOUR_FILES		=			actions.c actions_two.c stack_utils.c $(addprefix libft/, libft.a) # Add your files with the function you can test
-TESTS			=			actions_test.c # Add your test names without .c
+YOUR_FILES		=			$(addprefix $(DIR), actions.c actions_two.c stack_utils.c) $(addprefix $(DIR)libft/srcs/, libft.a) # Add your files with the function you can test
+TESTS			=			actions_test # Add your test names without .c
 HEADERS_TEST 	= 			minunit.h
 ################ CONFIG YOUR PROJECT #############
 FLAGS 			= 			-Wall -Werror -Wextra
@@ -22,7 +22,7 @@ all: 		config $(TESTS) $(EXEC_OUTS)
 			@echo $(EXEC_OUTS)
 
 config:
-	@$(MAKE) -C $(DIR)libft/
+	@$(MAKE) -C $(DIR)libft/srcs/
 
 $(TESTS): $(HEADERS)
 	$(CC)	-g $(addsuffix .c, $@) $(YOUR_FILES) -o $(addprefix $(DIR_OUTS), $@)

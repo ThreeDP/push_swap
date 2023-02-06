@@ -32,7 +32,7 @@ t_stack	*create_stack(char **av)
 	t_stack *tmp;
 	t_stack *head;
 
-	i = 1;
+	i = 0;
 	stack = stack_new(ft_atoi(av[i]));
 	head = stack;
 	while (av[++i])
@@ -42,5 +42,5 @@ t_stack	*create_stack(char **av)
 		stack = stack->next;
 		stack->back = tmp;
 	}
-	return (stack);
+	return (head);
 }
