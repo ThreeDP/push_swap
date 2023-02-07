@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+/* Shift up all elements of stack 'a' by 1.
+The First element becomes the last one.*/
 void    rotate_a(t_stack *a)
 {
 	int		num;
@@ -29,6 +31,8 @@ void    rotate_a(t_stack *a)
 	head->num = tmp;
 }
 
+/* Shift up all elements of stack 'b' by 1.
+The First element becomes the last one.*/
 void    rotate_b(t_stack *b)
 {
 	int		num;
