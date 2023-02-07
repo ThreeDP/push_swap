@@ -20,6 +20,7 @@ t_stack	*stack_new(int num)
 		if (!head)
 			return (NULL);
 		head->num = num;
+		head->stack = 'a';
 		head->next = NULL;
 		head->back = NULL;
 		return (head);
@@ -43,4 +44,23 @@ t_stack	*create_stack(char **av)
 		stack->back = tmp;
 	}
 	return (head);
+}
+
+void	clear_stack(t_stack **stack, void (*del)(void *))
+{
+	t_stack	*head;
+	t_stack	*next;
+
+	while ((*stack)->back)
+		(*stack) = (*stack)->back;
+	head = *stack;
+	next = *stack;
+	while (next)
+	{
+		head = next->next;
+		if (next)
+			del(next);
+		next = head;
+	}
+	*stack = NULL;
 }

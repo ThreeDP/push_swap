@@ -28,7 +28,7 @@ $(TESTS): $(HEADERS)
 	$(CC)	-g $(addsuffix .c, $@) $(YOUR_FILES) -o $(addprefix $(DIR_OUTS), $@)
 
 $(EXEC_OUTS):
-	@echo  "$(L_YELLOWB)$@:$(L_WHITE) " && $@
+	@echo  "$(L_YELLOWB)$@:$(L_WHITE) " && valgrind --leak-check=full -s --show-leak-kinds=all $@
 
 clean:
 	@rm			-f $(SRCS:.c=.o)

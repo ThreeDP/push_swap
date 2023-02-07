@@ -20,12 +20,14 @@
 typedef struct a_stack
 {
 	int             num;
+	char			stack;
 	struct a_stack *back;
 	struct a_stack *next;
 }   t_stack;
 
 t_stack		*create_stack(char **av);
 t_stack		*stack_new(int num);
+void		clear_stack(t_stack **stack, void (*del)(void *));
 
 // Actions
 void    	rotate_a(t_stack *a);
