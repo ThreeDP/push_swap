@@ -12,7 +12,7 @@ DIR				=			../srcs/
 DIR_OUTS		=			./outs/
 EXEC_OUTS		=			$(wildcard $(DIR_OUTS)*)
 YOUR_FILES		=			$(addprefix $(DIR), actions.c actions_two.c stack_utils.c radix_sort.c) $(addprefix $(DIR)libft/srcs/, libft.a) # Add your files with the function you can test
-TESTS			=			find_max_num_test #radix_sort_test #actions_test # Add your test names without .c
+TESTS			=			find_max_binary_position_test find_max_num_test #radix_sort_test #actions_test # Add your test names without .c
 HEADERS_TEST 	= 			minunit.h
 ################ CONFIG YOUR PROJECT #############
 FLAGS 			= 			-Wall -Werror -Wextra
