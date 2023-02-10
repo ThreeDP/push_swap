@@ -80,11 +80,26 @@ MU_TEST(try_find_max_num_in_list_65_10_75_1_100_minus_1000_9999_27_32_47_should_
     unset(numbers, stack);
 }
 
+MU_TEST(try_passing_a_null_stack_should_be_0)
+{
+    // ARRANGE
+    t_stack *stack = NULL;
+    int     expected_max_num    = 0;
+    int     result_max_num;
+
+    // ACT
+    result_max_num = find_max_num(stack);
+
+    // ASSERT
+    mu_assert_int_eq(expected_max_num, result_max_num);
+}
+
 MU_TEST_SUITE(test_suite) {
     MU_RUN_TEST(try_find_max_num_in_list_65_should_be_65);
     MU_RUN_TEST(try_find_max_num_in_list_65_10_should_be_65);
     MU_RUN_TEST(try_find_max_num_in_list_65_10_75_should_be_75);
     MU_RUN_TEST(try_find_max_num_in_list_65_10_75_1_100_minus_1000_9999_27_32_47_should_be_9999);
+    MU_RUN_TEST(try_passing_a_null_stack_should_be_0);
 }
 
 int main(int argc, char *argv[]) {
