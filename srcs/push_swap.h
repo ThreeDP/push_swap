@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:24:20 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/09 22:33:51 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/09 23:01:00 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void		clear_stack(t_stack **stack, void (*del)(void *));
 // Sort functions
 int			find_max_num(t_stack *stack);
 void    	radix_sort(t_stack *stack);
+int 		find_max_binary_position(int max_num);
 
 // Actions
 void    	rotate_a(t_stack *a);
