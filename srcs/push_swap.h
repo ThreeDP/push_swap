@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:24:20 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/04 20:10:49 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/09 22:33:51 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ typedef struct a_stack
 t_stack		*create_stack(char **av);
 t_stack		*stack_new(int num);
 void		clear_stack(t_stack **stack, void (*del)(void *));
+
+// Sort functions
+int			find_max_num(t_stack *stack);
+void    	radix_sort(t_stack *stack);
 
 // Actions
 void    	rotate_a(t_stack *a);
