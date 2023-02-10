@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 01:39:58 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/10 02:11:00 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:19:56 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,14 @@ int no_num(char *str)
     }
     return (i);
 }
+/*
+int find_duplicate(char **args)
+{
+
+}
+
+int bigger_than_type_int(char *num)
+{
+
+}
+*/

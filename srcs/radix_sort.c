@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 22:11:26 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/10 01:11:30 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/10 02:26:02 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int     find_max_num(t_stack *stack)
     max_num = 0;
     while (stack)
     {
-        if (max_num < stack->num)
-            max_num = stack->num;
+        if (max_num < stack->index)
+            max_num = stack->index;
         stack = stack->next;
     }
     return (max_num);
@@ -73,12 +73,13 @@ void    radix_sort(t_stack *stack, int items)
     
     i = 0;
     j = items;
+    define_index(stack);
     digits = find_max_binary_position(find_max_num(stack));
     while (i < digits)
     {
         while (j)
         {
-            if (((stack->num >> i) & 1) == 1)
+            if (((stack->index >> i) & 1) == 1)
                 rotate_a(stack);
             else
                 push_b(&stack);

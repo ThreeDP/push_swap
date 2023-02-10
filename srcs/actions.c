@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dapaulin <dapaulin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 12:31:45 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/05 12:31:45 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/10 08:15:14 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void    swap_a(t_stack *a)
         tmp = next->num;
         next->num = a->num;
         a->num = tmp;
+        tmp = next->index;
+        next->index = a->index;
+        a->index = tmp;
     }
 }
 
@@ -39,6 +42,9 @@ void    swap_b(t_stack *b)
         tmp = back->num;
         back->num = b->num;
         b->num = tmp;
+        tmp = back->index;
+        back->index = b->index;
+        b->index = tmp;
     }
 }
 
