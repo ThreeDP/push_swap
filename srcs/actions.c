@@ -31,11 +31,8 @@ void    swap_b(t_stack *b)
     int     tmp;
     t_stack *back;
 
-    back = b->next;
-    if (!back)
-        return ;
-    if (!back->next && back->stack == 'b')
-        b = b->next;
+    if (!(!b->next && b->stack == 'b'))
+        b = b->back;
     if (b->back && b->stack == 'b')
     {
         back = b->back;
@@ -48,7 +45,7 @@ void    swap_b(t_stack *b)
 void    swap_ab(t_stack *stack)
 {
     swap_a(stack);
-    swap_b(stack->back);
+    swap_b(stack);
 }
 
 /*Take the first element at the top of stack b

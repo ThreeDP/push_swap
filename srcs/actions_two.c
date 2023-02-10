@@ -39,6 +39,8 @@ void    rotate_b(t_stack *b)
 	int		tmp;
 	t_stack	*head;
 
+	if (!(!b->next && b->stack == 'b'))
+        b = b->back;
 	head = b;
 	tmp = b->num;
 	while (b->back)
@@ -56,42 +58,46 @@ void	rotate_ab(t_stack *stack)
 	rotate_b(stack);
 }
 
+/* Shift down all elements of stack a by 1.
+The last element becomes the first one*/
 void    reverse_rotate_a(t_stack *a)
 {
 	int		num;
 	int		tmp;
-	t_stack	*head;
+	t_stack	*next;
 
-	head = a;
-	num = 0;
-	tmp = a->num;
-	while (a->next)
+	next = a->next;
+	num = a->num;
+	while (next)
 	{
+		tmp = next->num;
+		next->num = num;
 		num = tmp;
-		a = a->next;
-		tmp = a->num;
-		a->num = num;
+		next = next->next;
 	}
-	head->num = a->num;
+	a->num = tmp;
 }
 
+/* Shift down all elements of stack b by 1.
+The last element becomes the first one*/
 void    reverse_rotate_b(t_stack *b)
 {
 	int		num;
 	int		tmp;
-	t_stack	*head;
+	t_stack	*back;
 
-	head = b;
-	num = 0;
-	tmp = b->num;
-	while (b->back)
+	if (!(!b->next && b->stack == 'b'))
+        b = b->back;
+	back = b->back;
+	num = b->num;
+	while (back)
 	{
+		tmp = back->num;
+		back->num = num;
 		num = tmp;
-		b = b->back;
-		tmp = b->num;
-		b->num = num;
+		back = back->back;
 	}
-	head->num = b->num;
+	b->num = tmp;
 }
 
 void	reverse_rotate_ab(t_stack *stack)
