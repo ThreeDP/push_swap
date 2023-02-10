@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 22:11:26 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/10 00:28:14 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/10 01:11:30 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,29 @@ int find_max_binary_position(int max_num)
         max_num = max_num >> 1;
     }
     return (i);
+}
+
+void    define_index(t_stack *stack)
+{
+    int     how_many;
+    t_stack *cursor;
+    t_stack *head;
+
+    cursor = stack;
+    head = stack;
+    while (cursor)
+    {
+        how_many = 0;
+        while (stack)
+        {
+            if (cursor->num > stack->num)
+                how_many++;
+            stack = stack->next;
+        }
+        cursor->index = how_many;
+        stack = head;
+        cursor = cursor->next;
+    }
 }
 
 void    radix_sort(t_stack *stack, int items)

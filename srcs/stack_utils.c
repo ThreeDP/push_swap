@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 18:30:48 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/04 20:24:03 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/10 01:02:18 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*stack_new(int num)
 		if (!head)
 			return (NULL);
 		head->num = num;
+		head->index = 0;
 		head->stack = 'a';
 		head->next = NULL;
 		head->back = NULL;
