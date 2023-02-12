@@ -6,7 +6,7 @@
 /*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 12:46:34 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/10 09:09:51 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/12 00:08:53 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 /* Shift up all elements of stack 'a' by 1.
 The First element becomes the last one.*/
-void    rotate_a(t_stack *a)
+void	rotate_a(t_stack *a)
 {
-	int		num;
 	int		tmp;
 	int		i;
 	t_stack	*head;
@@ -37,15 +36,14 @@ void    rotate_a(t_stack *a)
 
 /* Shift up all elements of stack 'b' by 1.
 The First element becomes the last one.*/
-void    rotate_b(t_stack *b)
+void	rotate_b(t_stack *b)
 {
-	int		num;
 	int		tmp;
 	int		i;
 	t_stack	*head;
 
 	if (!(!b->next && b->stack == 'b'))
-        b = b->back;
+		b = b->back;
 	head = b;
 	tmp = b->num;
 	i = b->index;
@@ -68,7 +66,7 @@ void	rotate_ab(t_stack *stack)
 
 /* Shift down all elements of stack a by 1.
 The last element becomes the first one*/
-void    reverse_rotate_a(t_stack *a)
+void	reverse_rotate_a(t_stack *a)
 {
 	int		num;
 	int		i;
@@ -97,7 +95,7 @@ void    reverse_rotate_a(t_stack *a)
 
 /* Shift down all elements of stack b by 1.
 The last element becomes the first one*/
-void    reverse_rotate_b(t_stack *b)
+void	reverse_rotate_b(t_stack *b)
 {
 	int		num;
 	int		i;
@@ -106,7 +104,7 @@ void    reverse_rotate_b(t_stack *b)
 	t_stack	*back;
 
 	if (!(!b->next && b->stack == 'b'))
-        b = b->back;
+		b = b->back;
 	back = b->back;
 	num = b->num;
 	i = b->index;

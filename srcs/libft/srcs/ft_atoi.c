@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dapaulin <dapaulin@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 20:10:07 by dapaulin          #+#    #+#             */
-/*   Updated: 2022/10/08 18:40:15 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/11 19:26:50 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_signdetect(int c, int *pos)
 {	
@@ -21,10 +22,10 @@ static int	ft_signdetect(int c, int *pos)
 	return (1);
 }
 
-int	ft_atoi(const char *nptr)
+ssize_t	ft_atoi(const char *nptr)
 {
 	int		pos;
-	int		nbr;
+	ssize_t	nbr;
 	int		sign;
 
 	pos = 0;

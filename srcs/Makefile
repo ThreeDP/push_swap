@@ -13,7 +13,7 @@ FLAGS_LIBFT		=			-L$(PATH_LIBFT) -lft
 ################ SOURCES	##################
 NAME			=			push_swap
 HEADER			=			push_swap.h $(addprefix $(PATH_LIBFT), libft.h)
-SRCS			=			push_swap.c stack_utils.c
+SRCS			=			push_swap.c stack_utils.c actions.c actions_two.c err.c radix_sort.c bubble_sort.c
 OBJS			=			$(SRCS:.c=.o)
 ################ FLAGS		##################
 FLAGS			=			-Wall -Werror -Wextra

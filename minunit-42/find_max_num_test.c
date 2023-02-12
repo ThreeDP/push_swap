@@ -21,10 +21,11 @@ MU_TEST(try_find_max_num_in_list_65_should_be_65)
     // ARRANGE
     char    **numbers = ft_split("65", ' ');
     t_stack *stack = create_stack(numbers);
-    int     expected_max_num    = 65;
+    int     expected_max_num    = 0;
     int     result_max_num;
 
     // ACT
+    define_index(stack);
     result_max_num = find_max_num(stack);
 
     // ASSERT
@@ -37,10 +38,11 @@ MU_TEST(try_find_max_num_in_list_65_10_should_be_65)
     // ARRANGE
     char    **numbers = ft_split("65 10", ' ');
     t_stack *stack = create_stack(numbers);
-    int     expected_max_num    = 65;
+    int     expected_max_num    = 1;
     int     result_max_num;
 
     // ACT
+    define_index(stack);
     result_max_num = find_max_num(stack);
 
     // ASSERT
@@ -53,10 +55,11 @@ MU_TEST(try_find_max_num_in_list_65_10_75_should_be_75)
     // ARRANGE
     char    **numbers = ft_split("65 10 75", ' ');
     t_stack *stack = create_stack(numbers);
-    int     expected_max_num    = 75;
+    int     expected_max_num    = 2;
     int     result_max_num;
 
     // ACT
+    define_index(stack);
     result_max_num = find_max_num(stack);
 
     // ASSERT
@@ -69,10 +72,11 @@ MU_TEST(try_find_max_num_in_list_65_10_75_1_100_minus_1000_9999_27_32_47_should_
     // ARRANGE
     char    **numbers = ft_split("65 10 75 1 100 -1000 9999 27 32 47", ' ');
     t_stack *stack = create_stack(numbers);
-    int     expected_max_num    = 9999;
+    int     expected_max_num    = 9;
     int     result_max_num;
 
     // ACT
+    define_index(stack);
     result_max_num = find_max_num(stack);
 
     // ASSERT
@@ -88,6 +92,7 @@ MU_TEST(try_passing_a_null_stack_should_be_0)
     int     result_max_num;
 
     // ACT
+    define_index(stack);
     result_max_num = find_max_num(stack);
 
     // ASSERT
