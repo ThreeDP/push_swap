@@ -13,7 +13,7 @@ FLAGS_LIBFT		=			-L$(PATH_LIBFT) -lft
 ################ SOURCES	##################
 NAME			=			push_swap
 HEADER			=			push_swap.h $(addprefix $(PATH_LIBFT), libft.h)
-SRCS			=			stack_utils.c actions.c actions_two.c actions_three.c \
+SRCS			=			push_swap.c actions.c actions_two.c actions_three.c stack_utils.c \
 							err.c minimum_sort.c radix_sort.c utils.c
 OBJS			=			$(SRCS:.c=.o)
 ################ FLAGS		##################
@@ -23,10 +23,10 @@ FLAGS			=			-Wall -Werror -Wextra
 all: libft $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) push_swap.c -L$(PATH_LIBFT) -I$(PATH_LIBFT) -lft $(OBJS) $(FLAGS) $(FLAGS_LIBFT) -o $(NAME)
+	$(CC) $(OBJS) $(PATH_LIBFT)libft.a $(FLAGS) -o $(NAME)
 
 %.o: %.c $(HEADER)
-	$(CC) $(FLAGS) -L$(PATH_LIBFT) -I$(PATH_LIBFT) -lft $(FLAGS_LIBFT) $< -o $@
+	$(CC) $(FLAGS) $(PATH_LIBFT)libft.a $< -o $@
 
 libft:
 	@$(MAKE) -C $(PATH_LIBFT) --no-print-directory
