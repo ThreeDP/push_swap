@@ -123,9 +123,3 @@ void	reverse_rotate_b(t_stack *b)
 	b->num = tmp;
 	b->index = j;
 }
-
-void	reverse_rotate_ab(t_stack *stack)
-{
-	reverse_rotate_a(stack);
-	reverse_rotate_b(stack);
-}

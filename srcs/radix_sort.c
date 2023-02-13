@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dapaulin <dapaulin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dapaulin <dapaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 22:11:26 by dapaulin          #+#    #+#             */
-/*   Updated: 2023/02/12 00:17:55 by dapaulin         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:21:39 by dapaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	find_max_num(t_stack *stack)
 {
@@ -81,22 +80,13 @@ void	radix_sort(t_stack *stack, int items)
 		while (j)
 		{
 			if (((stack->index >> i) & 1) == 1)
-			{
-				rotate_a(stack);
-				ft_putstr_fd("ra\n", 1);
-			}
+				print_action(RA, stack, rotate_a);
 			else
-			{
-				push_b(&stack);
-				ft_putstr_fd("pb\n", 1);
-			}
+				print_action2(PB, &stack, push_b);
 			j--;
 		}
 		while (stack->back)
-		{
-			push_a(&stack);
-			ft_putstr_fd("pa\n", 1);
-		}
+			print_action2(PA, &stack, push_a);
 		i++;
 	}
 }

@@ -13,7 +13,8 @@ FLAGS_LIBFT		=			-L$(PATH_LIBFT) -lft
 ################ SOURCES	##################
 NAME			=			push_swap
 HEADER			=			push_swap.h $(addprefix $(PATH_LIBFT), libft.h)
-SRCS			=			push_swap.c stack_utils.c actions.c actions_two.c err.c radix_sort.c bubble_sort.c
+SRCS			=			stack_utils.c actions.c actions_two.c actions_three.c \
+							err.c minimum_sort.c radix_sort.c utils.c
 OBJS			=			$(SRCS:.c=.o)
 ################ FLAGS		##################
 FLAGS			=			-Wall -Werror -Wextra
@@ -21,11 +22,11 @@ FLAGS			=			-Wall -Werror -Wextra
 
 all: libft $(NAME)
 
-$(NAME):
-	$(CC) $(SRCS) $(FLAGS) $(FLAGS_LIBFT) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) push_swap.c -L$(PATH_LIBFT) -I$(PATH_LIBFT) -lft $(OBJS) $(FLAGS) $(FLAGS_LIBFT) -o $(NAME)
 
-#%.o: %.c $(HEADER)
-#	$(CC) $(FLAGS) $(FLAGS_LIBFT) $< -o $@
+%.o: %.c $(HEADER)
+	$(CC) $(FLAGS) -L$(PATH_LIBFT) -I$(PATH_LIBFT) -lft $(FLAGS_LIBFT) $< -o $@
 
 libft:
 	@$(MAKE) -C $(PATH_LIBFT) --no-print-directory
@@ -33,6 +34,9 @@ libft:
 clean:
 	@$(MAKE) $@ -C $(PATH_LIBFT) --no-print-directory
 	@rm	-f $(OBJS)
+
+n:
+	norminette $(SRCS) $(HEADER)
 
 fclean: clean
 	@$(MAKE) $@ -C $(PATH_LIBFT) --no-print-directory
